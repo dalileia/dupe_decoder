@@ -1,8 +1,8 @@
-import sys
-sys.path.append('/home/dali/python_projects/compare_products/src/app/helper')
-import sys
 import unittest
+import sys
+sys.path.append('/home/dali/python_projects/compare_products/src')
 from app.helper.array_helper import ArrayHelper
+
 
 class TesteArrayHelperClass(unittest.TestCase):
     """
@@ -61,3 +61,6 @@ class TesteArrayHelperClass(unittest.TestCase):
         #assert
         self.assertEqual(expected, result)
         
+        
+if __name__ == '__main__':
+    unittest.main()

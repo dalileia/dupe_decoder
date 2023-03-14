@@ -1,9 +1,8 @@
-import sys
-sys.path.append('/home/dali/python_projects/compare_products/src/app/entity')
-import sys
 import unittest
-from item_data import ItemData
-from item import Item
+import sys
+sys.path.append('/home/dali/python_projects/compare_products/src')
+from app.model.item import Item
+from app.model.item_data import ItemData
 
 class TesteItemClass(unittest.TestCase):
     """
@@ -29,6 +28,6 @@ class TesteItemClass(unittest.TestCase):
         result = item.dehydrate()
         self.assertIsInstance(result, ItemData)
 
-        
+
 if __name__ == '__main__':
     unittest.main()

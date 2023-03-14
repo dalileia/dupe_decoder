@@ -1,12 +1,14 @@
 {
     "python.analysis.extraPaths": [
         "./src/app/entity",
-        "./src/app/helper"
+        "./src/app/helper",
+        "./src/app/model",
+        "./src/app/dao"
     ],
     "python.testing.unittestArgs": [
         "-v",
         "-s",
-        "./src",
+        "./src/app/tests",
         "-p",
         "test_*.py"
     ],

@@ -1,4 +1,8 @@
 import unittest
+import sys
+sys.path.append('/home/dali/python_projects/compare_products/src/')
+
+from app.dao.db import mydb
 from app.dao.dao import Dao
 from app.model.product_data import ProductData
 
@@ -53,7 +57,7 @@ class TestReturnOneProduct(unittest.TestCase):
         """
         Test that the type of id is int
         """
-        product = Dao().return_one_products(1)
+        product = Dao().return_one_product(1)
         result = (product.id)
         self.assertIsInstance(result, int)
 

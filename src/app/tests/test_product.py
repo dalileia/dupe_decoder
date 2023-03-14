@@ -1,10 +1,10 @@
 import sys
-sys.path.append('/home/dali/python_projects/compare_products/src/app/model')
+sys.path.append('/home/dali/python_projects/compare_products/src')
 import unittest
-from item_data import ItemData
-from item import Item
-from product_data import ProductData
-from product import Product
+from app.model.item_data import ItemData
+from app.model.item import Item
+from app.model.product_data import ProductData
+from app.model.product import Product
 
 class TesteProductClass(unittest.TestCase):
     """
