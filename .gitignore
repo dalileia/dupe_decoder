@@ -5,3 +5,6 @@ __pycache__/
 *$py.class
 
 venv/
+Dockerfile
+.dockerignore
+.gitignore

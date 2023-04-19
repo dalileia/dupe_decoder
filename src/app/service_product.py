@@ -12,7 +12,7 @@ class GetAllProducts(Resource):
         products = None
         try:
             result = Dao().return_all_products()
-            products = json.dumps(result, default=lambda o: o.__dict__, sort_keys=True)
+            products = json.dumps(result, default=lambda o: o.__dict__)
             products = json.loads(products)
         except Exception as e:
             print(e)
@@ -31,6 +31,7 @@ class GetOneProduct(Resource):
             try:
                 product_data = Dao().return_one_product(id)
                 product = json.dumps(product_data, default=lambda o: o.__dict__)
+                product = json.loads(product)
             except Exception as e:
                 print(e)
                 product = None
