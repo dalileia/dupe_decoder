@@ -1,10 +1,7 @@
-queries
-/__pycache__
-*/__pycache__
-product/app/__pycache__
+__pycache__/
+*__pycache__
 product/.pytest_cache
 temp
 .vscode
 venv/
-docker/mysql/dockerfile
 .dockerignore
