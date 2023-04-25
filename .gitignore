@@ -1,10 +1,10 @@
 queries
-
-__pycache__/
-*.py[cod]
-*$py.class
-
+/__pycache__
+*/__pycache__
+product/app/__pycache__
+product/.pytest_cache
+temp
+.vscode
 venv/
-Dockerfile
+docker/mysql/dockerfile
 .dockerignore
-.gitignore

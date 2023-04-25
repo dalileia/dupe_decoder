@@ -2,9 +2,9 @@ import pymysql.cursors
 
 
 mydb = pymysql.connect(
-    host="localhost",
+    host="mysql",
     user="root",
-    password="password",
+    password="",
     database="product"
   )
 
