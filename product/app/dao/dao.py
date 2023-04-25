@@ -61,8 +61,8 @@ class Dao():
                                         "name", i.item_name
                                         ))
                                         FROM Item i
-                                        JOIN ProductItem pi ON pi.item_product_id = i.item_id
-                                        WHERE p.product_id = pi.product_item_id
+                                        JOIN ProductItem pi ON pi.item_id = i.item_id
+                                        WHERE p.product_id = pi.product_id
                                     ), JSON_ARRAY())
                                 ) Product
                                 FROM Product p WHERE p.product_id=%s''')

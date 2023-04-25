@@ -54,6 +54,7 @@ class CompareProducts(Resource):
                 result = ProductHelper.compared_product_list(product,product_list)
                 result.sort(key=lambda x: x.percentage, reverse=True)
                 compared_products = json.dumps(result, default=lambda o: o.__dict__)
+                compared_products = json.loads(compared_products)
             except Exception as e:
                 print(e)
                 compared_products = None
@@ -69,6 +70,7 @@ class SearchProducts(Resource):
                 if(product.name.lower().find(searched) != -1): 
                     result.append(product)
             searched_products = json.dumps(result, default=lambda o: o.__dict__)
+            searched_products = json.loads(searched_products)
         except:
             searched_products = None
         return searched_products
