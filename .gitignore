@@ -1,6 +1,5 @@
 __pycache__/
 *__pycache__
-product/.pytest_cache
 temp
 .vscode
 venv/
