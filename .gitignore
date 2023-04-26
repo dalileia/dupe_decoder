@@ -5,3 +5,5 @@ temp
 .vscode
 venv/
 .dockerignore
+requirements.txt
+yoyo.ini
