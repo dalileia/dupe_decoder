@@ -1,21 +1,7 @@
 version: '3'
 
 services:
-    
-    python:
-        restart: always
-        build:
-            context: ./docker/python/
-            dockerfile: dockerfile
-        command: bash start.sh
-        volumes:
-            - ./product:/product
-        ports:
-            - "4999:5000"
-        env_file:
-            - ./envs/env.env
-            - ./envs/mysql.env
-    
+
     mysql:
         restart: always
         volumes:
@@ -27,5 +13,19 @@ services:
             MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
             MYSQL_ROOT_PASSWORD: ""
         ports:
-            - "4998:3306"
-            
+            - "5998:3306"
+
+    python:
+        restart: always
+        build:
+            context: ./docker/python/
+            dockerfile: dockerfile
+        command: bash start.sh
+        volumes:
+            - ./product:/product
+        ports:
+            - "5999:5000"
+        env_file:
+            - ./envs/env.env
+            - ./envs/mysql.env
+
