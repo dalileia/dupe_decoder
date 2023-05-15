@@ -36,6 +36,7 @@ services:
         build:
             context: ./docker/angular
             dockerfile: dockerfile
+        command: bash start.sh
         ports:
             - "4201:4200"
         container_name: angular
