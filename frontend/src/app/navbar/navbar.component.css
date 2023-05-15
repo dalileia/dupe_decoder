@@ -1,0 +1,29 @@
+
+.header {
+  display:flex;
+  max-width: 1080px;
+  justify-content: space-between;
+  padding-top: 30px;
+  margin:0 auto;
+  font-family: "Roboto";
+  align-items: center;
+  /* padding-right: 50px;
+  padding-left: 50px; */
+}
+
+.link{
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Roboto";
+  color: #777777;
+}
+
+.logo{
+  font-family: "Roboto";
+}
+
+.home{
+  text-decoration: none;
+
+  color: black
+}

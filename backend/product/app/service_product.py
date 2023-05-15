@@ -26,7 +26,6 @@ class GetOneProduct(Resource):
         product_id_list = ProductHelper.product_id_list()
         if (id not in product_id_list):
             return make_response(jsonify({"error": "400"}), 400)
-        
         else:
             try:
                 product_data = Dao().return_one_product(id)
@@ -44,7 +43,6 @@ class CompareProducts(Resource):
         product_id_list = ProductHelper.product_id_list()
         if (id not in product_id_list):
             return make_response(jsonify({"error": "400"}), 400)
-        
         else:
             try:
                 product_data = Dao().return_one_product(id)
@@ -52,8 +50,10 @@ class CompareProducts(Resource):
                 product = Product()
                 product.hydrate(product_data)
                 result = ProductHelper.compared_product_list(product,product_list)
+                print(result)
                 result.sort(key=lambda x: x.percentage, reverse=True)
-                compared_products = json.dumps(result, default=lambda o: o.__dict__)
+                compared_products = ComparedProductList(product,result)
+                compared_products = json.dumps(compared_products, default=lambda o: o.__dict__)
                 compared_products = json.loads(compared_products)
             except Exception as e:
                 print(e)

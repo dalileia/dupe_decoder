@@ -5,7 +5,7 @@ services:
     mysql:
         restart: always
         volumes:
-            - ./temp/mysql_data:/var/lib/mysql
+            - ./backend/temp/mysql_data:/var/lib/mysql
         build:
             context: ./docker/mysql
             dockerfile: dockerfile
@@ -22,10 +22,22 @@ services:
             dockerfile: dockerfile
         command: bash start.sh
         volumes:
-            - ./product:/product
+            - ./backend/product:/product
         ports:
             - "5999:5000"
         env_file:
-            - ./envs/env.env
-            - ./envs/mysql.env
+            - ./backend/envs/env.env
+            - ./backend/envs/mysql.env
+        depends_on:
+            - mysql
 
+    angular:
+        restart: always
+        build:
+            context: ./docker/angular
+            dockerfile: dockerfile
+        ports:
+            - "4201:4200"
+        container_name: angular
+        volumes:
+            - ./frontend:/frontend
