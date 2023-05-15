@@ -42,3 +42,7 @@ services:
         container_name: angular
         volumes:
             - ./frontend:/frontend
+            - volume-node-modules:/frontend/node_modules
+
+volumes:
+    volume-node-modules:
