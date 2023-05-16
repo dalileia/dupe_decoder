@@ -25,5 +25,6 @@ RUN pip install "passlib==1.7.4"
 RUN pip install "Flask-Bcrypt==1.0.1"
 RUN pip install "PyMySQL==1.0.2"
 RUN pip install "yoyo-migrations==8.2.0"
+RUN pip install "Flask-Cors==3.0.10"
 
 WORKDIR /product
