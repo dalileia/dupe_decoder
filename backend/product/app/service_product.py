@@ -19,7 +19,6 @@ class GetAllProducts(Resource):
             products = None
         return products
 
-
 class GetOneProduct(Resource):
     def get(self, id):
         product = None
@@ -35,7 +34,30 @@ class GetOneProduct(Resource):
                 print(e)
                 product = None
             return product
+        
+class GetOneBrand(Resource):
+    def get(self, id):
+        brand = None
+        try:
+            brand_data = Dao().return_one_brand(id)
+            brand = json.dumps(brand_data, default=lambda o: o.__dict__)
+            brand = json.loads(brand)
+        except Exception as e:
+            print(e)
+            brand = None
+        return brand    
     
+class GetAllBrands(Resource):
+    def get(self):
+        brand = None
+        try:
+            brand_data = Dao().return_all_brands()
+            brand = json.dumps(brand_data, default=lambda o: o.__dict__)
+            brand = json.loads(brand)
+        except Exception as e:
+            print(e)
+            brand = None
+        return brand
 
 class CompareProducts(Resource):
     def get(self, id):
@@ -50,7 +72,6 @@ class CompareProducts(Resource):
                 product = Product()
                 product.hydrate(product_data)
                 result = ProductHelper.compared_product_list(product,product_list)
-                print(result)
                 result.sort(key=lambda x: x.percentage, reverse=True)
                 compared_products = ComparedProductList(product,result)
                 compared_products = json.dumps(compared_products, default=lambda o: o.__dict__)

@@ -1,3 +1,4 @@
+from app.model.brand_data import BrandData
 from flask import jsonify
 import pymysql.cursors
 from app.dao.db import mydb
@@ -79,3 +80,56 @@ class Dao():
              product_data.items.append(item_temp)
         return product_data
     
+    def return_all_brands(self):
+        cursor = mydb.cursor(pymysql.cursors.DictCursor)
+        sql = ('''SELECT JSON_OBJECT (
+                                "id", b.brand_id,
+                                "name", b.brand_name,
+                                "products", IFNULL((
+                                SELECT JSON_ARRAYAGG(JSON_OBJECT (
+                                        "id", p.product_id,
+                                        "name", p.product_name
+                                        ))
+                                        FROM Product p
+                                        JOIN BrandProduct bp ON bp.product_id = p.product_id
+                                        WHERE b.brand_id = bp.brand_id
+                                    ), JSON_ARRAY())
+                                ) Brand 
+                                FROM Brand b''')
+        cursor.execute(sql)
+        data = cursor.fetchall()
+        brand_list = []
+        for row in data:
+            brand = json.loads(row['Brand'])
+            id = brand['id']
+            name = brand['name']
+            products = brand['products']
+            brand = BrandData(id,name,products)
+            brand_list.append(brand)
+        return brand_list
+
+    def return_one_brand(self, id):
+        cursor = mydb.cursor(pymysql.cursors.DictCursor)
+        sql = ('''SELECT JSON_OBJECT (
+                                "id", b.brand_id,
+                                "name", b.brand_name,
+                                "products", IFNULL((
+                                SELECT JSON_ARRAYAGG(JSON_OBJECT (
+                                        "id", p.product_id,
+                                        "name", p.product_name
+                                        ))
+                                        FROM Product p
+                                        JOIN BrandProduct bp ON bp.product_id = p.product_id
+                                        WHERE b.brand_id = bp.brand_id
+                                    ), JSON_ARRAY())
+                                ) Brand
+                                FROM Brand b WHERE b.brand_id=%s''')
+        cursor.execute(sql%id)
+        data = cursor.fetchone()
+        brand = json.loads(data['Brand'])
+        id = brand['id']
+        name = brand['name']
+        products = brand['products']
+        brand = BrandData(id,name,products)
+        return brand
+

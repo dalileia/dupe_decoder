@@ -68,9 +68,9 @@ class Product():
 
     def compare(self, product):
         equal_items = len(self.identifies_equal_items(product))
-        different_items_main = len(self.identifies_equal_items(product))
+        different_items_main = len(self.identifies_different_items(product))
         different_items_compared = len(product.identifies_different_items(self))
-        percentage = 0 if self.items == 0 else equal_items/(equal_items + different_items_main + different_items_compared)
+        percentage = 0 if self.items == 0 else equal_items/(((equal_items*2) + different_items_main + different_items_compared)/2)
         compared_product = ComparedProduct(product,percentage)
         return compared_product
 

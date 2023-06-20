@@ -1,6 +1,7 @@
 
 from app.dao.dao import Dao
 from app.model.product import Product
+from app.helper.brand_helper import BrandHelper
 
 
 class ProductHelper():
@@ -22,24 +23,17 @@ class ProductHelper():
             product_temp.hydrate(product)
             product_list.append(product_temp)
         return product_list
-    
+   
     @staticmethod
     def compared_product_list(product_main, product_list):
+        brands = BrandHelper.brand_product_id_list
         result = []
-        
+        brand_product = set()
         for product in product_list:
             if product.id != product_main.id:
                comparison = product_main.compare(product)
-               if comparison.percentage >0:
+               if comparison.percentage > 0.5:
                    result.append(comparison)
-        return result
-
-# product_data_1 = Dao().return_one_product(1)
-# product_list = ProductHelper.product_list()
-# product_1 = Product()
-# product_1.hydrate(product_data_1)
-
-
-# result = ProductHelper.compared_product_list(product_1,product_list)
-# for product in result:
-#     print(product.percentage)
+        # result.sort(key=lambda x: x.percentage) // alterando a lista diretamente
+        sorted_result = sorted(result, key=lambda x: x.percentage)
+        return sorted_result
