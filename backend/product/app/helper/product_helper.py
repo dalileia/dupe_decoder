@@ -26,14 +26,21 @@ class ProductHelper():
    
     @staticmethod
     def compared_product_list(product_main, product_list):
-        brands = BrandHelper.brand_product_id_list
+        brands = BrandHelper().brand_product_id_list()
         result = []
-        brand_product = set()
+        brand_cache = []
+        final_result = []
         for product in product_list:
             if product.id != product_main.id:
                comparison = product_main.compare(product)
-               if comparison.percentage > 0.5:
+               if comparison.percentage > 0.3:
                    result.append(comparison)
-        # result.sort(key=lambda x: x.percentage) // alterando a lista diretamente
-        sorted_result = sorted(result, key=lambda x: x.percentage)
-        return sorted_result
+        sorted_result = sorted(result, key=lambda x: x.percentage, reverse=True)
+        brand = brands.get(product_main.id)
+        brand_cache.append(brand)
+        for product in sorted_result:
+            brand = brands.get(product.product.id)
+            if brand not in brand_cache:
+                final_result.append(product)
+                brand_cache.append(brand)
+        return final_result
