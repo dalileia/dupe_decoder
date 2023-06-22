@@ -8,9 +8,10 @@ services:
             context: ./docker/nginx/
             dockerfile: dockerfile
         volumes:
-            - ./frontend/dist/frontend:/build/frontend
+            - ./frontend:/frontend
         ports:
             - "8085:80"
+            - "8086:81"
         environment:
            - NGINX_PORT=80
 
@@ -35,8 +36,6 @@ services:
         command: bash start.sh
         volumes:
             - ./backend/product:/product
-        ports:
-            - "5999:5000"
         env_file:
             - ./backend/envs/env.env
             - ./backend/envs/mysql.env
@@ -49,8 +48,6 @@ services:
             context: ./docker/angular
             dockerfile: dockerfile
         command: bash start.sh
-        ports:
-            - "4201:4200"
         container_name: angular
         volumes:
             - ./frontend:/frontend
