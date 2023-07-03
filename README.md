@@ -1,5 +1,10 @@
 ***
 
+chmod 400 key-dupedecoder.pem
+Para acessar o servidor
+
+ssh -i key-dupedecoder.pem ubuntu@18.229.54.106
+
 ## Configuração de ambiente ##
 A primeira coisa que você vai fazer quando precisar configurar um novo servidor
 
