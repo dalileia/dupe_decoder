@@ -6,3 +6,5 @@ venv/
 .dockerignore
 requirements.txt
 yoyo.ini
+sql_scripts
+key-dupedecoder.pem
