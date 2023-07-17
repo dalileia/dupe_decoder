@@ -247,7 +247,7 @@ do_clone_repository() {
 	echo "Qual o caminho do repositório?"
 	read GIT_REPO_PATH
 
-	yes | git clone -b main --recurse-submodules $GIT_REPO_PATH app
+	yes | git clone -b master --recurse-submodules $GIT_REPO_PATH app
 
 }
 
