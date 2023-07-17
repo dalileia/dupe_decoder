@@ -35,7 +35,7 @@ function usage() {
 function do_build() {
 	bash ./deploy/docker-down-container.sh && \
 	bash ./deploy/update-git.sh && \
-	bash ./deploy/deploy-backup-database.sh /mysql_data /mysql_data/mysql-backup && \
+	bash ./deploy/deploy-backup-database.sh /mysql_data/mysql /mysql_data/mysql-backup && \
 	bash ./deploy/docker-up-container.sh
 }
 

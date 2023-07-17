@@ -4,7 +4,7 @@ services:
 
     mysql:
         volumes:
-            - /mysql_data:/var/lib/mysql
+            - /mysql_data/mysql:/var/lib/mysql
         environment:
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
             MYSQL_ROOT_PASSWORD: ",w?kt;V_6,XznDU:M*;:cm~/XBrm2e"
