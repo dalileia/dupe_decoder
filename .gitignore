@@ -1,10 +1,10 @@
-queries
-
 __pycache__/
-*.py[cod]
-*$py.class
-
+*__pycache__
+temp
+.vscode
 venv/
-Dockerfile
 .dockerignore
-.gitignore
+requirements.txt
+yoyo.ini
+sql_scripts
+key-dupedecoder.pem

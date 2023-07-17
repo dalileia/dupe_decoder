@@ -1,0 +1,25 @@
+<figure class="text-center">
+  <div class="products">
+    <mat-accordion class="headers-align" multi>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="product-name">{{ product.name }}</div>
+          </mat-panel-title>
+          <mat-panel-description *ngIf="percentage">
+            {{ percentage | percent }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ng-container *ngFor="let item of product['items']">
+          <div class="items-name">{{ item.name }}</div>
+        </ng-container>
+        <mat-action-row>
+          <button mat-button color="primary" (click)="sendMessage(product.id)">
+            Compare Product
+          </button>
+        </mat-action-row>
+      </mat-expansion-panel>
+      <mat-divider></mat-divider>
+    </mat-accordion>
+  </div>
+</figure>

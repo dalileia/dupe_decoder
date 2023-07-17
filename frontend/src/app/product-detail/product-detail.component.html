@@ -1,0 +1,18 @@
+<div class="product">
+  <ng-container *ngIf="product">
+    <div class="product-name">{{ product.name }}</div>
+    <ng-container *ngFor="let items of items">
+      <div class="items">
+        <div class="item-name">{{ items.name }}</div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
+<div class="product-display">
+  <app-product-display
+    *ngFor="let comparedProduct of comparedProduct"
+    [product]="comparedProduct.product"
+    [percentage]="comparedProduct.percentage"
+    (messageEvent)="openProduct($event)"
+  ></app-product-display>
+</div>
