@@ -1,7 +1,10 @@
 #!/bin/bash
 
 if [ "$ENV_PRODUCTION" = "yes" ] ; then
-	uwsgi --ini python.ini
+    sleep 15s
+    yoyo init --database mysql://root:@mysql/product migrations
+    yoyo apply
+    uwsgi --ini python.ini
 else
     export FLASK_DEBUG=1
     sleep 15s
