@@ -7,7 +7,7 @@ services:
             - /mysql_data/mysql:/var/lib/mysql
         environment:
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
-            MYSQL_ROOT_PASSWORD: ",w?kt;V_6,XznDU:M*;:cm~/XBrm2e"
+            MYSQL_ROOT_PASSWORD: "1w8kt5V_67XznDU4M237cm52XBrm2e"
     
     python:
         env_file:
