@@ -92,7 +92,8 @@ class SearchProducts(Resource):
                     result.append(product)
             searched_products = json.dumps(result, default=lambda o: o.__dict__)
             searched_products = json.loads(searched_products)
-        except:
+        except Exception as e:
+            print(e)
             searched_products = None
         return searched_products
 
