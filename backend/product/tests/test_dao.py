@@ -2,7 +2,7 @@ import unittest
 import sys
 sys.path.append('/home/dali/python_projects/compare_products/src/')
 
-from app.dao.db import mydb
+from app.dao.db import db_connection
 from app.dao.dao import Dao
 from app.model.product_data import ProductData
 
