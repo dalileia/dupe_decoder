@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/dali/python_projects/compare_products/src')
 import unittest
 from app.model.item_data import ItemData
 from app.model.item import Item

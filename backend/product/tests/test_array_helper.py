@@ -1,6 +1,5 @@
 import unittest
 import sys
-sys.path.append('/home/dali/python_projects/compare_products/src')
 from app.helper.array_helper import ArrayHelper
 
 
