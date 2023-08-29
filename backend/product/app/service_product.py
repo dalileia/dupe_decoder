@@ -97,8 +97,17 @@ class SearchProducts(Resource):
             searched_products = None
         return searched_products
 
-
-
+class GetOneItem(Resource):
+    def get(self, id):
+        item = None
+        try:
+            item_data = Dao().return_one_item(id)
+            item = json.dumps(item_data, default=lambda o: o.__dict__)
+            item = json.loads(item)
+        except Exception as e:
+            print(e)
+            item = None
+        return item
 
 
 

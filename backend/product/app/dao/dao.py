@@ -142,3 +142,28 @@ class Dao():
         brand = BrandData(id,name,products)
         mydb.commit()
         return brand
+
+
+    def return_one_item(self, id):
+        mydb = db_connection()
+        cursor = mydb.cursor(pymysql.cursors.DictCursor)
+        sql = ('''SELECT JSON_OBJECT(
+                "id", i.item_id ,
+                "name", i.item_name ,
+                "name_pt", i.item_name_pt,
+                "description", i.item_description,
+                "function", i.item_function
+            ) AS Item
+            FROM Item i 
+            WHERE i.item_id=%s''')
+        cursor.execute(sql%id)
+        data = cursor.fetchone()
+        item = json.loads(data['Item'])
+        id = item['id']
+        name = item['name']
+        name_pt = item['name_pt']
+        description = item['description']
+        function = item['function']
+        item = ItemData(id,name,name_pt,description,function)
+        mydb.close()
+        return item

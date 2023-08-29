@@ -10,6 +10,10 @@
 
 	"workspaceFolder": "/frontend",
 	"features": {
-		
+      "ghcr.io/devcontainers-contrib/features/angular-cli:1": {
+			  "installTools": true,
+			  "version": "latest"
+		  }
+
 	}
 }

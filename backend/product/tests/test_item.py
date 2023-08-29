@@ -12,7 +12,7 @@ class TesteItemClass(unittest.TestCase):
         """
         Test if the hydrate function create an instance of Item
         """
-        item_data = ItemData(1,"Item one")
+        item_data = ItemData(1,"Item one","Item um", "É muito bom","preservative")
         result = Item()
         result.hydrate(item_data)
         self.assertIsInstance(result, Item)
@@ -21,7 +21,7 @@ class TesteItemClass(unittest.TestCase):
         """
         Test if the function dehydrate return an instance of ItemData
         """
-        item_data = ItemData(1,"Item one")
+        item_data = ItemData(1,"Item one","Item um", "É muito bom","preservative")
         item = Item()
         item.hydrate(item_data)
         result = item.dehydrate()
