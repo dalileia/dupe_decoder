@@ -1,6 +1,10 @@
-<header class="header">
-  <a class="home" href="#" aria-label="home">
-    <mat-icon class="icon">home</mat-icon>
-  </a>
+<div *ngIf="isHome()">
+  <header class="header">
+    <div class="home">
+      <a class="dupe" href="#" aria-label="home">dupe decoder</a>
+      <!-- <p class="description">encontre DUPES (alternativas) para os seus cosméticos que estejam em sintonia com seu bolso, saúde e convicções </p>   -->
+    </div>
   <app-search-bar></app-search-bar>
-</header>
+  </header>
+</div>
+

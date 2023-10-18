@@ -1,6 +1,8 @@
-<p class="products-title">choose the product to compare</p>
-<app-product-display
-  *ngFor="let products of products"
-  [product]="products"
-  (messageEvent)="openProduct($event)"
-></app-product-display>
+<div class="titulo">Selecione o produto para o qual deseja encontrar alternativas:</div>
+<div class="product-list">
+  <app-product-display
+    *ngFor="let products of products"
+    [product]="products"
+    (messageEvent)="openProduct($event)"
+  ></app-product-display>
+</div>

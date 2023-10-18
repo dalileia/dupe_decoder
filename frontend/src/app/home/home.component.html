@@ -1,17 +1,20 @@
 <div class="main">
-  <p class="title">search</p>
-  <p class="description">to find the product you want to compare</p>
+  <p class="title">dupe decoder</p>
+  <p class="description">Encontre alternativas para os seus cosméticos que estejam<br> em sintonia com seu bolso, saúde e convicções </p>
   <form class="search-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <mat-form-field color="primary" appearance="outline">
+    <mat-form-field appearance="outline">
+      <mat-label>digite o nome ou a marca do produto</mat-label>
       <input
         class="form"
         type="search"
         matInput
         ngModel
-        placeholder="type here..."
+        placeholder=""
         name="search"
       />
-      <mat-icon matSuffix>search</mat-icon>
+      <button matSuffix mat-icon-button aria-label="search">
+        <mat-icon matSuffix>search</mat-icon>
+      </button>
     </mat-form-field>
   </form>
 </div>

@@ -1,25 +1,24 @@
-<figure class="text-center">
-  <div class="products">
-    <mat-accordion class="headers-align" multi>
+<mat-divider class="divider"></mat-divider>
       <mat-expansion-panel hideToggle>
+        
         <mat-expansion-panel-header>
-          <mat-panel-title>
+          <mat-panel-description>
             <div class="product-name">{{ product.name }}</div>
-          </mat-panel-title>
-          <mat-panel-description *ngIf="percentage">
-            {{ percentage | percent }}
           </mat-panel-description>
+<!-- 
+          <mat-panel-title>
+            <div class="marca">Marca</div>
+          </mat-panel-title> -->
+          <mat-panel-icon class="percentage" *ngIf="percentage">
+            {{ percentage | percent }}
+          </mat-panel-icon>
         </mat-expansion-panel-header>
-        <ng-container *ngFor="let item of product['items']">
-          <div class="items-name">{{ item.name }}</div>
-        </ng-container>
+
+        <p class="paragrafo"><ng-container class="item_name" *ngFor="let item of product['items']">{{ item.name }}, </ng-container></p>
+
         <mat-action-row>
-          <button mat-button color="primary" (click)="sendMessage(product.id)">
-            Compare Product
-          </button>
+          <button mat-button color="primary" (click)="sendMessage(product.id)">Buscar produtos similares</button>
         </mat-action-row>
+
       </mat-expansion-panel>
-      <mat-divider></mat-divider>
-    </mat-accordion>
-  </div>
-</figure>
+

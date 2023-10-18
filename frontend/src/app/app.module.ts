@@ -27,8 +27,8 @@ import { ProductDisplayComponent } from './product-display/product-display.compo
     ProductDetailComponent,
     ProductSearchComponent,
     ProductSearchComponent,
-    ProductDisplayComponent,
-  ],
+    ProductDisplayComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

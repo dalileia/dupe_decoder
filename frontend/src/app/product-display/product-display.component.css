@@ -1,4 +1,46 @@
-.products {
-  padding-left: 90px;
-  padding-right: 90px;
+@font-face {
+  font-family: "Roboto-light";
+  src: url("../../assets/font/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-thin";
+  src: url("../../assets/font/Roboto-Thin.ttf");
+}
+
+
+.marca{
+  font-family: "Roboto-light";
+  color:black;
+  font-style:bold;
+}
+
+.product-name {
+  font-family: "Roboto-light";
+  color:black;
+  font-style:bold;
+  font-size: 15px;
+}
+
+.mat-icon{
+  color:black;
+}
+
+.paragrafo{
+  text-align: justify;
+  font-family: "Roboto-light";
+  color:black;
+  font-style:bold;
+  padding-left: 170px;
+  padding-right: 170px;
+}
+
+.mat-action-row{
+  padding-right: 20px;
+}
+
+.percentage{
+  font-family: "Roboto-light";
+  color:black;
+  font-style:bold;
 }

@@ -1,20 +1,25 @@
 @font-face {
-  font-family: Roboto;
-  src: url(/frontend/src/assets/font/Roboto-Thin.ttf);
+  font-family: "Roboto-light";
+  src: url("../../assets/font/Roboto-Light.ttf");
 }
 
 .product {
-  font-family: "Roboto";
+  font-family: "Roboto-light";
   font-style: normal;
-  text-align: center;
   padding-bottom: 50px;
+  padding-left: 200px;
+  padding-right: 200px;
+  text-align: justify;
 }
 
 .product-name {
+  padding-top: 50px;
   font-size: 26px;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 .items {
   font-size: large;
+  text-align: justify;
 }

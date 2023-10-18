@@ -1,9 +1,22 @@
-.search-bar{
-  max-width: 1080px;
-  padding-top: 10px;
-  margin:0;
+@font-face {
+  font-family: "Roboto-light";
+  src: url("../../assets/font/Roboto-Light.ttf");
 }
 
-.form{
-  width: 100%;
+
+.search-bar{
+  line-height: 54px;
+  align-items: right;
+  padding-right: 30px;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 350px;
+}
+
+mat-label{
+  font-size: 12px;
+  color:black;
+  font-family: "Roboto-light";
 }

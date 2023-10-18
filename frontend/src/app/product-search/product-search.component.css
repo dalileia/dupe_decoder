@@ -1,18 +1,16 @@
 @font-face {
-  font-family: Poppins;
-  src: url(/frontend/src/assets/font/Poppins-Regular.ttf);
+  font-family: "Roboto-light";
+  src: url("../../assets/font/Roboto-Light.ttf");
 }
 
-@font-face {
-  font-family: Roboto;
-  src: url(/frontend/src/assets/font/Roboto-Regular.ttf);
+.product-list{
+  padding-top: 60px;
 }
 
-.products-title {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 26px;
+.titulo {
+  font-family: "Roboto-light";
+  padding-top: 50px;
+  font-size: 20px;
   text-align: center;
-  padding-bottom: 50px;
 }
+

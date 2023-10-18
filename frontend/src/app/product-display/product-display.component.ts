@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ComparedProduct } from '../models/compared.products';
 import { Product } from '../models/product.model';
 
 @Component({

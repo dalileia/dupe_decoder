@@ -15,14 +15,6 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isHome(): boolean {
-    const check = this.router.url;
-    console.log(check)
-    if (check == '/') {
-      return false
-    } return true
-  }
-
   onSubmit(form: NgForm) {
     this.router.navigate(['product-search', form.value.search]);
   }
